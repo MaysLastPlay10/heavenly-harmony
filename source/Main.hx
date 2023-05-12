@@ -17,7 +17,9 @@ import lime.app.Application;
 import openfl.events.UncaughtErrorEvent;
 import haxe.CallStack;
 import haxe.io.Path;
+#if desktop
 import Discord.DiscordClient;
+#end
 import sys.FileSystem;
 import sys.io.File;
 import sys.io.Process;
@@ -84,7 +86,6 @@ class Main extends Sprite
 		ClientPrefs.loadDefaultKeys();
 		addChild(new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen));
 
-		#if !mobile
 		fpsVar = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsVar);
 		Lib.current.stage.align = "tl";
@@ -92,7 +93,6 @@ class Main extends Sprite
 		if(fpsVar != null) {
 			fpsVar.visible = ClientPrefs.showFPS;
 		}
-		#end
 
 		#if html5
 		FlxG.autoPause = false;
@@ -141,7 +141,9 @@ class Main extends Sprite
 		Sys.println("Crash dump saved in " + Path.normalize(path));
 
 		Application.current.window.alert(errMsg, "Error!");
+	  #if desktop
 		DiscordClient.shutdown();
+		#end
 		Sys.exit(1);
 	}
 	#end
