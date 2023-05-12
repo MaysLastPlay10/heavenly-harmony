@@ -1189,7 +1189,7 @@ class PlayState extends MusicBeatState
 		doof.cameras = [camHUD];
 
    #if mobile
-   addMobileControls ();
+   addMobileControls(false);
    mobileControls.visible = false;
    #end
 
@@ -3068,7 +3068,7 @@ class PlayState extends MusicBeatState
 			botplayTxt.alpha = 1 - Math.sin((Math.PI * botplaySine) / 180);
 		}
 
-		if (controls.PAUSE && startedCountdown && canPause)
+		if (controls.PAUSE #if mobile || FlxG.android.justReleased.BACK #end && startedCountdown && canPause)
 		{
 			var ret:Dynamic = callOnLuas('onPause', [], false);
 			if(ret != FunkinLua.Function_Stop) {
@@ -3938,7 +3938,7 @@ class PlayState extends MusicBeatState
 	public var transitioning = false;
 	public function endSong():Void
 	{
-     #if mobile
+     
      mobileControls.visible = false;
      #end
 		//Should kill you if you tried to cheat
