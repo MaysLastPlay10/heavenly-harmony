@@ -408,6 +408,9 @@ class FreeplayState extends MusicBeatState
 
 		if(ctrl)
 		{
+		    #if mobile
+        removeVirtualPad();
+        #end
 			persistentUpdate = false;
 			openSubState(new GameplayChangersSubstate());
 		}
@@ -487,6 +490,9 @@ class FreeplayState extends MusicBeatState
 		}
 		else if(controls.RESET #if mobile || virtualPad.buttonY.justPressed #end)
 		{
+		    #if mobile
+        removeVirtualPad();
+        #end
 			persistentUpdate = false;
 			openSubState(new ResetScoreSubState(songs[curSelected].songName, curDifficulty, songs[curSelected].songCharacter));
 			FlxG.sound.play(Paths.sound('scrollMenu'));
