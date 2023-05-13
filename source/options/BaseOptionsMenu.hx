@@ -46,6 +46,11 @@ class BaseOptionsMenu extends MusicBeatSubstate
 
 	public function new()
 	{
+
+   #if mobile
+   addVirtualPad (LEFT_FULL, A_B_C);
+   #end
+
 		super();
 
 		if(title == null) title = 'Options';
@@ -238,7 +243,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 				}
 			}
 
-			if(controls.RESET)
+			if(controls.RESET #if mobile || virtualPad.buttonC.justPressed #end)
 			{
 				for (i in 0...optionsArray.length)
 				{
@@ -266,7 +271,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		if(nextAccept > 0) {
 			nextAccept -= 1;
 		}
-		super.update(elapsed);
+		.update(elapsed);
 	}
 
 	function updateTextFrom(option:Option) {
