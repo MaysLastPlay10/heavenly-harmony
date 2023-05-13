@@ -13,7 +13,6 @@ class SalamatScreen extends MusicBeatState
 {
 	var music:FlxSound;
 	var left:Bool = false;
-	var touchedlol:Bool = false;
 	override function create()
 	{
 		FlxG.sound.music.stop();
