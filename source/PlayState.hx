@@ -3917,7 +3917,7 @@ class PlayState extends MusicBeatState
 	public var transitioning = false;
 	public function endSong():Void
 	{
-     
+     #if mobile
      mobileControls.visible = false;
      #end
 		//Should kill you if you tried to cheat
