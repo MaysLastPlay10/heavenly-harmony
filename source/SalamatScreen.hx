@@ -32,7 +32,17 @@ class SalamatScreen extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		if (controls.ACCEPT && !left)
+		#if mobile
+		for (touch in FlxG.touches.list)
+		{
+			if (touch.justPressed)
+			{
+				justTouched = true;
+			}
+		}
+		#end
+
+		if (#if mobile justTouched #else controls.ACCEPT #end && !left)
 		{
 			left = true;
 			FlxG.sound.playMusic(Paths.music('freakyMenu'));
