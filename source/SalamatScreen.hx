@@ -41,15 +41,15 @@ class SalamatScreen extends MusicBeatState
 		
 		#if mobile
 		for (touch in FlxG.touches.list) {
-		 if (touch.justPressed && !left)
+		 if (touch.justPressed && !left) //yes touch :)
 		 {
 			 left = true;
 			 FlxG.sound.playMusic(Paths.music('freakyMenu'));
 			 MusicBeatState.switchState(new MainMenuState());
-	   }
+	         }
 		}
 		#else
-	   if (controls.ACCEPT && !left)
+	         if (controls.ACCEPT && !left)
 		 {
 			left = true;
 			FlxG.sound.playMusic(Paths.music('freakyMenu'));
