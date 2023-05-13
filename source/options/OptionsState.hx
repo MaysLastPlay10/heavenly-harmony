@@ -39,10 +39,19 @@ class OptionsState extends MusicBeatState
 	function openSelectedSubstate(label:String) {
 		switch(label) {
 			case 'notes':
+		    #if mobile
+        removeVirtualPad();
+        #end
 				openSubState(new options.NotesSubState());
 			case 'controls':
+				#if mobile
+        removeVirtualPad();
+        #end
 				openSubState(new options.ControlsSubState());
 			case 'prefs':
+			  #if mobile
+        removeVirtualPad();
+        #end
 				openSubState(new options.GraphicsSettingsSubState());
 		}
 	}
