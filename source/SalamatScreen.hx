@@ -13,6 +13,7 @@ class SalamatScreen extends MusicBeatState
 {
 	var music:FlxSound;
 	var left:Bool = false;
+	var touchedlol:Bool = false;
 	override function create()
 	{
 		FlxG.sound.music.stop();
@@ -30,20 +31,33 @@ class SalamatScreen extends MusicBeatState
 		noproblemo.setFormat(Paths.font("GhostKidAOE.otf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(noproblemo);
 
-   #if mobile
+   /*#if mobile
    addVirtualPad(NONE, A);
-   #end
+   #end*/
 
 	}
 
 	override function update(elapsed:Float)
 	{
-		if (controls.ACCEPT && !left)
-		{
+		
+		#if mobile
+		for (touch in FlxG.touches.list) {
+		 if (touch.justPressed && !left)
+		 {
+			 left = true;
+			 FlxG.sound.playMusic(Paths.music('freakyMenu'));
+			 MusicBeatState.switchState(new MainMenuState());
+	   }
+		}
+		#else
+	   if (controls.ACCEPT && !left)
+		 {
 			left = true;
 			FlxG.sound.playMusic(Paths.music('freakyMenu'));
 			MusicBeatState.switchState(new MainMenuState());
-		}
+		 }
+		#end
+	
 		super.update(elapsed);
 	}
 	
