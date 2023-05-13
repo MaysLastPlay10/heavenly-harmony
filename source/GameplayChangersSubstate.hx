@@ -109,6 +109,11 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 
 	public function new()
 	{
+
+   #if mobile
+   addVirtualPad(LEFT_FULL, A_B_C);
+   #end
+
 		super();
 		
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
@@ -290,7 +295,7 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 				}
 			}
 
-			if(controls.RESET)
+			if(controls.RESET #if mobile || virtualPad.buttonC.justPressed #end)
 			{
 				for (i in 0...optionsArray.length)
 				{
