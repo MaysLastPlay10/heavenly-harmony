@@ -2562,7 +2562,7 @@ class FunkinLua {
 		{
 			try {
 				if(!absolute)
-					File.saveContent(Paths.mods(path), content);
+					File.saveContent(Paths.getPreloadPath(path), content);
 				else
 					File.saveContent(path, content);
 
@@ -2887,7 +2887,7 @@ class FunkinLua {
 	}
 	#end
 	
-	function initLuaShader(name:String, ?glslVersion:Int = 120)
+	/*function initLuaShader(name:String, ?glslVersion:Int = 120)
 	{
 		if(!ClientPrefs.shaders) return false;
 
@@ -2939,7 +2939,7 @@ class FunkinLua {
 		luaTrace('This platform doesn\'t support Runtime Shaders!', false, false, FlxColor.RED);
 		#end
 		return false;
-	}
+	}*/
 
 	function getGroupStuff(leArray:Dynamic, variable:String) {
 		var killMe:Array<String> = variable.split('.');
