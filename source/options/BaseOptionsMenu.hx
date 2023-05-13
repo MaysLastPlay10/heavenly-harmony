@@ -271,7 +271,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		if(nextAccept > 0) {
 			nextAccept -= 1;
 		}
-		.update(elapsed);
+		super.update(elapsed);
 	}
 
 	function updateTextFrom(option:Option) {
