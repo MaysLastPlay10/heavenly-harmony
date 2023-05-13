@@ -3,6 +3,7 @@ import flixel.FlxSprite;
 import flixel.system.FlxSound;
 import flixel.util.FlxTimer;
 import flixel.*;
+import flixel.FlxG;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.text.FlxText;
