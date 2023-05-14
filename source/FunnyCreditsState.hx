@@ -88,7 +88,7 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 			if (OpenFlAssets.exists(creditsFile))
 			{
 				//var firstarray:Array<String> = Assets.getText(creditsFile).split('\n');
-				for(i in Assets.getText(creditsFile).split('\n'))
+				for(i in OpenFlAssets.getText(creditsFile).split('\n'))
 				{
 					var arr:Array<String> = i.replace('\\n', '\n').split("::");
 					if(arr.length >= 5) arr.push(folder);
