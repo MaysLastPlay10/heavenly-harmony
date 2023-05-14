@@ -5,12 +5,12 @@ import flixel.FlxG;
 import flixel.FlxSubState;
 import flixel.FlxBasic;
 import flixel.FlxSprite;
-/*#if mobile
+#if mobile
 import mobile.flixel.FlxVirtualPad;
 import flixel.FlxCamera;
 import flixel.input.actions.FlxActionInput;
 import flixel.util.FlxDestroyUtil;
-#end*/
+#end
 
 class MusicBeatSubstate extends FlxSubState
 {
@@ -32,7 +32,7 @@ class MusicBeatSubstate extends FlxSubState
 	inline function get_controls():Controls
 		return PlayerSettings.player1.controls;
 
-		/*#if mobile
+		#if mobile
 	var virtualPad:FlxVirtualPad;
 	var trackedInputsVirtualPad:Array<FlxActionInput> = [];
 
@@ -68,21 +68,21 @@ class MusicBeatSubstate extends FlxSubState
 			virtualPad.cameras = [camControls];
 		}
 	}
-	#end*/
+	#end
 
 	override function destroy()
 	{
-		/*#if mobile
+		#if mobile
 		if (trackedInputsVirtualPad.length > 0)
 			controls.removeVirtualControlsInput(trackedInputsVirtualPad);
-		#end*/
+		#end
 
 		super.destroy();
 
-		/*#if mobile
+		#if mobile
 		if (virtualPad != null)
 			virtualPad = FlxDestroyUtil.destroy(virtualPad);
-		#end*/
+		#end
 	}
 
 	override function update(elapsed:Float)
