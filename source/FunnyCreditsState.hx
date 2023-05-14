@@ -19,7 +19,7 @@ import flixel.tweens.FlxTween;
 import sys.FileSystem;
 import sys.io.File;
 #end
-import lime.utils.Assets;
+import openfl.utils.Assets as OpenFlAssets;
 import flixel.addons.display.FlxBackdrop;
 
 using StringTools;
@@ -82,11 +82,12 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 				creditsStuff.push(['']);
 			}
 		};
+		#end
 		var folder = "";
 			var creditsFile:String = Paths.txt('creditss');
-			if (FileSystem.exists(creditsFile))
+			if (Assets.exists(creditsFile))
 			{
-				var firstarray:Array<String> = File.getContent(creditsFile).split('\n');
+				var firstarray:Array<String> = Assets.getText(creditsFile).split('\n');
 				for(i in firstarray)
 				{
 					var arr:Array<String> = i.replace('\\n', '\n').split("::");
@@ -95,6 +96,7 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 				}
 				creditsStuff.push(['']);
 			}
+	#if MODS_ALLOWED
 		for (folder in Paths.getModDirectories())
 		{
 			var creditsFile:String = Paths.mods(folder + '/data/creditss.txt');
