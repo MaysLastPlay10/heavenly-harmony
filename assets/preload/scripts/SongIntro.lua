@@ -1,6 +1,8 @@
 --easy script configs
 
-IntroTextSize = 40	--Size of the text for the Now Playing thing.IntroSubTextSize = 40 --size of the text for the Song Name.
+IntroTextSize = 40	--Size of the text for the Now Playing thing.
+
+IntroSubTextSize = 40 --size of the text for the Song Name.
 
 IntroTagColor = '8300c3'	--Color of the tag at the end of the box.
 
