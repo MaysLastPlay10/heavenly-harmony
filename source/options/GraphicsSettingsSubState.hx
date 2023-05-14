@@ -29,7 +29,7 @@ import openfl.Lib;
 
 using StringTools;
 
-class GraphicsSettingsSubState extends BaseOptionsMenu
+class PreferencesSubState extends BaseOptionsMenu
 {
 	public function new()
 	{
