@@ -85,7 +85,7 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		#end
 		var folder = "";
 			var creditsFile:String = Paths.txt('creditss');
-			if (Assets.exists(creditsFile))
+			if (OpenFlAssets.exists(creditsFile))
 			{
 				var firstarray:Array<String> = Assets.getText(creditsFile).split('\n');
 				for(i in firstarray)
