@@ -329,7 +329,6 @@ class PlayState extends MusicBeatState
 	override public function create()
 	{
 		//trace('Playback Rate: ' + playbackRate);
-		Paths.clearUnusedMemory();
 		Paths.clearStoredMemory();
 
 		// for lua
@@ -1384,7 +1383,7 @@ class PlayState extends MusicBeatState
 					Paths.music(key);
 			}
 		}
-		Paths.clearStoredMemory();
+
 		Paths.clearUnusedMemory();
 		
 		CustomFadeTransition.nextCamera = camOther;
