@@ -52,7 +52,7 @@ class OptionsState extends MusicBeatState
 			  #if mobile
         removeVirtualPad();
         #end
-				openSubState(new options.GraphicsSettingsSubState());
+				openSubState(new options.PreferencesSubState());
 		}
 	}
 
