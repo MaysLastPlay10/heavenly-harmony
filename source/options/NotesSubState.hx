@@ -89,6 +89,11 @@ class NotesSubState extends MusicBeatSubstate
 		add(hsbText);
 
 		changeSelection();
+		
+		#if mobile
+		addVirtualPad(LEFT_FULL, A_B_C);
+		addVirtualPadCamera();
+		#end
 	}
 
 	var changingNote:Bool = false;
@@ -173,7 +178,12 @@ class NotesSubState extends MusicBeatSubstate
 
 		if (controls.BACK || (changingNote && controls.ACCEPT)) {
 			if(!changingNote) {
-				close();
+		  #if mobile
+       FlxTransitionableState.skipNextTransOut = true;
+		   FlxG.resetState();
+      #else
+       close();
+      #end
 			} else {
 				changeSelection();
 			}
