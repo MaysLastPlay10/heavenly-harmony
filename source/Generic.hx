@@ -36,7 +36,7 @@ class Generic {
 	/**
 	* returns some paths depending on current 'mode' variable or you can force it to any mode by typing it into ()
 	*/
-	public static function returnPath(m:Modes = ROOTDATA):String {
+	public static function returnPath(m:Modes = INTERNAL):String {
 		#if android
 		if (m == ROOTDATA && mode != ROOTDATA) { // the most stupid checking i made
 			m = mode;
