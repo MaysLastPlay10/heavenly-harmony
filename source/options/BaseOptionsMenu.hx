@@ -48,7 +48,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 	{
 
    #if mobile
-   addVirtualPad (LEFT_FULL, A_B_C);
+   addVirtualPad(LEFT_FULL, A_B_C);
    #end
 
 		super();
