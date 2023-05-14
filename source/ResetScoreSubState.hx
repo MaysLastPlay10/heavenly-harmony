@@ -25,10 +25,6 @@ class ResetScoreSubState extends MusicBeatSubstate
 		this.difficulty = difficulty;
 		this.week = week;
 
-   #if mobile
-   addVirtualPad(LEFT_RIGHT, A_B);
-   #end
-
 		super();
 
 		var name:String = song;
