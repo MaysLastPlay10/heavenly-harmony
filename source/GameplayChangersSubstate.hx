@@ -110,9 +110,7 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 	public function new()
 	{
 
-   /*#if mobile
-   addVirtualPad(LEFT_FULL, A_B_C);
-   #end*/
+ 
 
 		super();
 		
@@ -164,6 +162,11 @@ class GameplayChangersSubstate extends MusicBeatSubstate
 		}
 
 		changeSelection();
+		 
+  	#if mobile
+   addVirtualPad(LEFT_FULL, A_B_C);
+   #end
+   
 		reloadCheckboxes();
 	}
 
