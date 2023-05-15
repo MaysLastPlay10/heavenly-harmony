@@ -19,6 +19,8 @@ class FlxHitbox extends FlxSpriteGroup
 	public var buttonDown:FlxButton = new FlxButton(0, 0);
 	public var buttonUp:FlxButton = new FlxButton(0, 0);
 	public var buttonRight:FlxButton = new FlxButton(0, 0);
+	
+	var alphashit:alphashit;
 
 	/**
 	 * Create the zone.
@@ -26,6 +28,8 @@ class FlxHitbox extends FlxSpriteGroup
 	public function new():Void
 	{
 		super();
+		
+		alphashit = ClientPrefs.padalpha;
 
 		add(buttonLeft = createHint(0, 0, Std.int(FlxG.width / 4), FlxG.height, 0xFF00FF));
 		add(buttonDown = createHint(FlxG.width / 4, 0, Std.int(FlxG.width / 4), FlxG.height, 0x00FFFF));
@@ -71,8 +75,8 @@ class FlxHitbox extends FlxSpriteGroup
 		hint.alpha = 0.00001;
 		hint.onDown.callback = hint.onOver.callback = function()
 		{
-			if (hint.alpha != 0.2)
-				hint.alpha = 0.2;
+			if (hint.alpha != alphashit)
+				hint.alpha = alphashit;
 		}
 		hint.onUp.callback = hint.onOut.callback = function()
 		{
