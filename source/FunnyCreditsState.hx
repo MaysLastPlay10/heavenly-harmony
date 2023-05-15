@@ -51,6 +51,10 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 
 	override function create()
 	{
+	  
+	  Paths.clearStoredMemory();		
+	  Paths.clearUnusedMemory();
+	  
 		#if desktop
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Perusing the Credits", null);
