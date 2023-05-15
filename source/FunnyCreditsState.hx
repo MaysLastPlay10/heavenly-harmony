@@ -239,7 +239,7 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		xd.scrollFactor.set();
 		xd.screenCenter(X);
 		xd.borderSize = 1.2;
-		add(x);
+		add(xd);
 		
 		nameText = new FlxText(860, 400, 1180, "", 35);
 		nameText.setFormat(Paths.font("Marker Felt.ttf"), 35, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
