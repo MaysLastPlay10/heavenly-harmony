@@ -128,7 +128,7 @@ class OptionsState extends MusicBeatState
 		sus.scrollFactor.set();
 		add(sus); //sus??!?!
 		
-		var sussy:FlxText = new FlxText(10, 30, 0, 'Press Y to customize opacity for your android controls', 16);
+		var sussy:FlxText = new FlxText(10, 32, 0, 'Press Y to customize opacity for your android controls', 16);
 		sussy.setFormat(Paths.font('vcr.ttf'), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		sussy.borderSize = 2.4;
 		sussy.scrollFactor.set();
