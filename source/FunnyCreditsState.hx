@@ -233,6 +233,14 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		stars = new FlxSprite().loadGraphic(Paths.image('menus/credits/credits_stars'));
 		add(stars);
 		
+		
+		var xd:FlxText = new FlxText(0, 0, 1180, "Press A to see EXTRA CREDITS", 35);
+		xd.setFormat(Paths.font("Marker Felt.ttf"), 35, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		xd.scrollFactor.set();
+		xd.screenCenter(X);
+		xd.borderSize = 1.2;
+		add(x);
+		
 		nameText = new FlxText(860, 400, 1180, "", 35);
 		nameText.setFormat(Paths.font("Marker Felt.ttf"), 35, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		nameText.scrollFactor.set();
