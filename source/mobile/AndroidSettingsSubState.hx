@@ -38,10 +38,22 @@ class AndroidSettingsSubState extends BaseOptionsMenu
 	{
 		title = 'Android Controls Settings';
 		rpcTitle = 'Android Controls Settings Menu'; //hi, you can ask what is that, i will answer it's all what you needed lol.
-
-		var option:Option = new Option('Opacity', //mariomaster was here again
-			'Changes opacity -omg',
+    
+    var option:Option = new Option('Vpad Opacity', //mariomaster was here again
+			'Changes Vpad Opacity -yeah ',
 			'padalpha',
+			'float',
+			0.5);
+		option.scrollSpeed = 1.6;
+		option.minValue = 0.01;
+		option.maxValue = 1;
+		option.changeValue = 0.01;
+		option.decimals = 2;
+		addOption(option);
+		
+		var option:Option = new Option('Hitbox Opacity', //mariomaster is dead :00000
+			'Changes Hitbox opacity -what',
+			'hitboxalpha',
 			'float',
 			0.2);
 		option.scrollSpeed = 1.6;
