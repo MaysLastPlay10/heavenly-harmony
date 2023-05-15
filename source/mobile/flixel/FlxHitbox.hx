@@ -29,7 +29,7 @@ class FlxHitbox extends FlxSpriteGroup
 	{
 		super();
 		
-		AlphaThing = ClientPrefs.padalpha;
+		AlphaThing = ClientPrefs.hitboxalpha;
 
 		add(buttonLeft = createHint(0, 0, Std.int(FlxG.width / 4), FlxG.height, 0xFF00FF));
 		add(buttonDown = createHint(FlxG.width / 4, 0, Std.int(FlxG.width / 4), FlxG.height, 0x00FFFF));
