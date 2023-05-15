@@ -255,6 +255,10 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 	//looks better without mouse lol	
 		updateSelection(0);
 		
+	 #if mobile
+   addVirtualPad(NONE, A);
+   #end
+		
 		super.create();
 	}
 
@@ -264,6 +268,12 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		{
 			exit();
 		}
+		
+		if (controls.ACCEPT) //what
+		{
+		  MusicBeatState.switchState(new FunnyCreditsState());
+		}
+		
 		selector.x = FlxMath.lerp(selector.x, selXLerp, 0.25);
 		selector.y = FlxMath.lerp(selector.y, selYLerp, 0.25);
 		
