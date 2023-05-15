@@ -2,6 +2,7 @@ name: Android Build OG
 on: workflow_dispatch
 jobs:
   Build:
+    name: BuildAndroid
     runs-on: ubuntu-latest
     permissions:
         contents: write
@@ -118,6 +119,7 @@ jobs:
           name: HeavenlyHarmony-Android
           path: export/release/android/bin/app/build/outputs/apk/debug
    Build32:
+    name: Build32
     runs-on: ubuntu-latest
     permissions:
         contents: write
