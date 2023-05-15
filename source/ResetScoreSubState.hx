@@ -111,7 +111,12 @@ class ResetScoreSubState extends MusicBeatSubstate
 				}
 			}
 			FlxG.sound.play(Paths.sound('cancelMenu'), 1);
-			close();
+			#if android
+      FlxTransitionableState.skipNextTransOut = true;
+			FlxG.resetState();
+      #else
+      close();
+      #end
 		}
 		super.update(elapsed);
 	}
