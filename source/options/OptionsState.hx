@@ -118,11 +118,11 @@ class OptionsState extends MusicBeatState
 		ClientPrefs.saveSettings();
 
    #if mobile
-   addVirtualPad(UP_DOWN, A_B_C);
+   addVirtualPad(UP_DOWN, A_B_X_Y);
    #end
 
    #if mobile
-		var sus:FlxText = new FlxText(10, 14, 0, 'Press C to customize your android controls', 16);
+		var sus:FlxText = new FlxText(10, 14, 0, 'Press X to customize your android controls', 16);
 		sus.setFormat(Paths.font('vcr.ttf'), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		sus.borderSize = 2.4;
 		sus.scrollFactor.set();
@@ -140,11 +140,15 @@ class OptionsState extends MusicBeatState
 	override function update(elapsed:Float) {
 		super.update(elapsed);
 
-                #if mobile
-		if (virtualPad.buttonC.justPressed)
+    #if mobile
+		if (virtualPad.buttonX.justPressed)
 		{
 			removeVirtualPad();
 			openSubState(new mobile.MobileControlsSubState());
+		}
+		if (virtualPad.buttonY.justPressed) {
+			removeVirtualPad();
+			openSubState(new mobile.HitboxSettingsSubState());
 		}
 		#end
 
