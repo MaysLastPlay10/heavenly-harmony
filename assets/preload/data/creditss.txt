@@ -1,3 +1,5 @@
+MarioMaster::mariomaster:Porter::"hola de nuevo"
+MaysLastPlay::mays::Porter::"a"
 DatDavi::davi::Director, Musician, Charter::"she althea on my gf until I'm fnf heavenly harmony"
 GlitchDroid::glitch::Artist, Animator::"Reach for the stars!"
 1412yuuuuu::yuu::Artist::"im gay for althea"
