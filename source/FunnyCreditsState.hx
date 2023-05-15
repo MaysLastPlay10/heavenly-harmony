@@ -247,8 +247,8 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		quoteText.borderSize = 1.2;
 		add(quoteText);
 		
-		FlxG.mouse.visible = true;
-		
+		//FlxG.mouse.visible = true;
+	//looks better without the mouse	
 		updateSelection(0);
 		
 		super.create();
