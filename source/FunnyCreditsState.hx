@@ -256,7 +256,7 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 
 	override function update(elapsed:Float)
 	{
-		if (controls.BACK)
+		if (controls.BACK #if mobile || FlxG.android.justReleased.BACK #end)
 		{
 			exit();
 		}
