@@ -75,8 +75,8 @@ class FlxHitbox extends FlxSpriteGroup
 		hint.alpha = 0.00001;
 		hint.onDown.callback = hint.onOver.callback = function()
 		{
-			if (hint.alpha != localAlphaThing)
-				hint.alpha = localAlphaThing;
+			if (hint.alpha != AlphaThing)
+				hint.alpha = AlphaThing;
 		}
 		hint.onUp.callback = hint.onOut.callback = function()
 		{
