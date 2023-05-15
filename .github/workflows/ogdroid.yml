@@ -118,7 +118,6 @@ jobs:
         with:
           name: HeavenlyHarmony-Android
           path: export/release/android/bin/app/build/outputs/apk/debug
-          if-no-files-found: warn
  Build32:
     name: Build32
     runs-on: ubuntu-latest
@@ -236,4 +235,3 @@ jobs:
         with:
           name: HeavenlyHarmony-Android32
           path: export/32bits/android/bin/app/build/outputs/apk/debug
-          if-no-files-found: warn
