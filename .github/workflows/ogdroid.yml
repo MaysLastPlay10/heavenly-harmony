@@ -2,7 +2,6 @@ name: Android Build OG
 on: workflow_dispatch
 jobs:
   Build:
-    name: NormalBuild
     runs-on: ubuntu-latest
     permissions:
         contents: write
@@ -118,8 +117,8 @@ jobs:
         with:
           name: HeavenlyHarmony-Android
           path: export/release/android/bin/app/build/outputs/apk/debug
- Build32:
-    name: Build32
+          if-no-files-found: warn
+   Build32:
     runs-on: ubuntu-latest
     permissions:
         contents: write
@@ -153,8 +152,8 @@ jobs:
         with:
           path: |
             .haxelib/
-            export/release/android/haxe/
-            export/release/android/obj/
+            export/32bits/android/haxe/
+            export/32bits/android/obj/
           key: cache-android-build
 
       - name: Installing Libraries
@@ -193,8 +192,8 @@ jobs:
           ANDROID_NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
       - name: Building
-        run: haxelib run lime build android -32 -D 32bits
-        
+        run: haxelib run lime build android -32 -D -32bits
+
       - name: Clear Previous Cache
         uses: actions/github-script@main
         with:
@@ -235,3 +234,4 @@ jobs:
         with:
           name: HeavenlyHarmony-Android32
           path: export/32bits/android/bin/app/build/outputs/apk/debug
+          if-no-files-found: warn
