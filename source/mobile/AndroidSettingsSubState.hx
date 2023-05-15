@@ -45,7 +45,7 @@ class AndroidSettingsSubState extends BaseOptionsMenu
 			'float',
 			0.5);
 		option.scrollSpeed = 1.6;
-		option.minValue = 0.01;
+		option.minValue = 0.1; //prevent invisible vpad
 		option.maxValue = 1;
 		option.changeValue = 0.01;
 		option.decimals = 2;
