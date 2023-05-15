@@ -271,7 +271,7 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		
 		if (controls.ACCEPT) //what
 		{
-		  MusicBeatState.switchState(new FunnyCreditsState());
+		  MusicBeatState.switchState(new CreditsState());
 		}
 		
 		selector.x = FlxMath.lerp(selector.x, selXLerp, 0.25);
