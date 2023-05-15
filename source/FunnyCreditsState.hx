@@ -234,7 +234,7 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		add(stars);
 		
 		
-		var xd:FlxText = new FlxText(0, 0, 1180, "Press A to see EXTRA CREDITS", 35);
+		var xd:FlxText = new FlxText(0, 0, 500, "Press A to see EXTRA CREDITS", 35);
 		xd.setFormat(Paths.font("Marker Felt.ttf"), 35, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		xd.scrollFactor.set();
 		xd.screenCenter(X);
