@@ -241,6 +241,13 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 		xd.borderSize = 1.2;
 		add(xd);
 		
+		var clarope:FlxText = new FlxText(0, FlxG.height - 10, 500, "Press BACK BUTTON to exit", 35);
+		clarope.setFormat(Paths.font("Marker Felt.ttf"), 35, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		clarope.scrollFactor.set();
+		clarope.screenCenter(X);
+		clarope.borderSize = 1.2;
+		add(clarope);
+		
 		nameText = new FlxText(860, 400, 1180, "", 35);
 		nameText.setFormat(Paths.font("Marker Felt.ttf"), 35, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		nameText.scrollFactor.set();
@@ -289,9 +296,9 @@ class FunnyCreditsState extends MusicBeatState //Reusing CreditsState cuz BIG BR
 	}
 	
 	function exit(){
-		FlxG.sound.music.stop();
-		FlxG.sound.play(Paths.sound('cancelMenu'));
-		FlxG.sound.playMusic(Paths.music('freakyMenu'));
+		//FlxG.sound.music.stop();
+		//FlxG.sound.play(Paths.sound('cancelMenu'));
+		//FlxG.sound.playMusic(Paths.music('freakyMenu'));
 		MusicBeatState.switchState(new MainMenuState());
 	}
 	
